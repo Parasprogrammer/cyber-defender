@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cyber Defender — Cyber Awareness Portal</title>
+<meta name="description" content="Live a day in your digital life on a simulated phone and laptop. Spot phishing, UPI scams, fake apps, scam calls and ransomware before they cost you money." />
+<meta name="theme-color" content="#f6f6f3" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="hud">
+  <div class="hud-left">
+    <button class="hud-logo" id="hud-logo">🛡️ <span>CYBER DEFENDER</span></button>
+  </div>
+  <div class="hud-right">
+    <span class="hud-chip hud-static" title="Bank balance">
+      Bank <span id="hud-balance">₹0</span>
+    </span>
+    <button class="hud-chip" id="badges-btn" title="View badges">
+      🏅 <span id="hud-badge-count">0</span>
+    </button>
+    <span class="hud-chip hud-static">
+      <span id="hud-xp">0</span> XP
+    </span>
+    <button class="hud-chip hud-reset" id="reset-btn" title="Reset progress">⟲</button>
+  </div>
+</header>
+
+<main id="screen" class="screen"></main>
+
+<div class="modal-overlay" id="badge-modal-overlay" hidden>
+  <div class="modal glass-card" id="badge-modal">
+    <button class="modal-close" id="badge-modal-close">✕</button>
+    <h2>Badges</h2>
+    <div class="badge-grid" id="badge-grid"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="cert-modal-overlay" hidden>
+  <div class="modal glass-card" id="cert-modal">
+    <button class="modal-close" id="cert-modal-close">✕</button>
+    <h2>Certificate of Completion</h2>
+    <p class="muted">Enter your name to generate a downloadable certificate for completing every Cyber Defender mission.</p>
+    <div class="cert-form">
+      <input type="text" id="cert-name-input" placeholder="Enter your full name" maxlength="60" />
+      <button class="btn btn-primary" id="cert-generate-btn">Generate certificate</button>
+    </div>
+    <canvas id="cert-canvas" width="1000" height="700" style="display:none;"></canvas>
+    <div class="btn-row" id="cert-download-row" style="display:none;">
+      <a id="cert-download-link" class="btn btn-primary" download="Cyber-Defender-Certificate.png">⬇ Download certificate</a>
+    </div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toast-stack"></div>
+
+<footer class="footer">
+  <p>Cyber Defender — a cyber awareness portal. Everything here is simulated. Progress is saved in your browser.</p>
+  <p>Lost money to a scam? Call <b>1930</b> or report at <b>cybercrime.gov.in</b>.</p>
+</footer>
+
+<script src="scenarios.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
